@@ -22,11 +22,12 @@ for (int i=0; i<5; ++i) {
 Random randomGenerator = new Random();
 int randomNumber = randomGenerator.Next(1, 11);
 
-
+int guess = 3;
 //ask for a number from user
-System.Console.WriteLine("Guess a random number: ");
-int guess = int.Parse(Console.ReadLine());
-    
+
+while (guess != randomNumber){
+    System.Console.WriteLine("Guess a random number: ");
+    guess = int.Parse(Console.ReadLine());
     //check if guess is higher
     if(guess > randomNumber){
         System.Console.WriteLine("Too high");}
@@ -34,6 +35,7 @@ int guess = int.Parse(Console.ReadLine());
     //check if guess is lower
     else if (guess < randomNumber){
         System.Console.WriteLine("Too low");}
+
     else
-        System.Console.WriteLine("You got it!");
+        System.Console.WriteLine("You got it!");}
             
