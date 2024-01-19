@@ -1,20 +1,38 @@
 using System;
+using System.Collections.Generic;
 
-class Program
-{
-    static void Main(string[] args)
+Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+int userNumber = 3;
+int sum = 0;
+// Lists - new keyword
+List<int> numbers = new List<int>();
+
+do while (userNumber != 0)
     {
-        Console.WriteLine("Hello Prep4 World!");
+        string userInput = System.Console.ReadLine();
+        userNumber = int.Parse(userInput);
 
-        // Lists - new keyword
-List<int> myInts = new List<int>();
-var moreInt = new List<int>();
+        if (userNumber != 0)
+        {
+            numbers.Add(userNumber);
+        }
+        //iterate over items
+        foreach (int  i in numbers)
+        {
+            sum += i;
+        }
+        System.Console.WriteLine($"The total is: {sum}");
 
-moreInt.Add(34);
+        float average = ((float)sum) / numbers.Count;
+        Console.WriteLine($"The average is: {average}");
 
-//iterate over items
-foreach(var n in moreInt) {
-    System.Console.WriteLine($"n = {n}");  
-}
+        foreach (int i in numbers)
+        {
+            int max = numbers[0];
+            if (i > max)
+            {
+                max = i;
+                System.Console.WriteLine($"The max is : {max}");
+            }
+        }
     }
-}
