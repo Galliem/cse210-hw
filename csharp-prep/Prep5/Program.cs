@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep5 World!");
+        Console.WriteLine();
 
         //Functions
         ReturnType FunctionName (paramType paramName1, paramType paramName2){
