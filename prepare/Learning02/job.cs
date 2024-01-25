@@ -1,16 +1,15 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-
-public class Job;
+public class Job
 {
     public string _jobTitle; 
-    public string _company;
+    public string _jobCompany;
     public int _startYear;
     public int _endYear;
 
+    public Job() {}
     public void Display()
+    
     {
-        System.Console.WriteLine($"{_jobTitle} {_company} {_startYear}-{_endYear}");
+        System.Console.WriteLine($"{_jobTitle} {_jobCompany} {_startYear}-{_endYear}");
     }
 
 }
