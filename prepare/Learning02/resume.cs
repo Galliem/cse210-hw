@@ -1,4 +1,5 @@
 using System;
+namespace Learning02;
 public class Resume{
     public List<Job> _jobs = new List<Job>();
     public string _name = "";

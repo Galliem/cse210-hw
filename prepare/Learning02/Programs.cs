@@ -1,4 +1,5 @@
 using System;
+namespace Learning02;
 class Programs{
     static void Main(string[] args)
     {
