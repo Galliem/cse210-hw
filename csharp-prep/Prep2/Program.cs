@@ -4,35 +4,53 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("What is your grade percentage? ");
-        int grade_percentage = Convert.ToInt32(Console.ReadLine());
-            String letters = "";
+        Console.WriteLine("Hello Prep2 World!");
 
-            if (grade_percentage <= 60){
-                letters = "D";
-            }
-            else if (grade_percentage >= 60 && grade_percentage <= 71){
-                letters = "D";
-            }
-            else if (grade_percentage >= 70 && grade_percentage < 81){
-                letters = "C";
-            }
-            else if (grade_percentage >= 80 && grade_percentage < 91){
-                letters = "B";
-            }
-            else if (grade_percentage >= 90){
-                letters = "A";
-            }
 
-            Console.WriteLine($"Grade: {letters}");
+        //Primitive types
+        int i;
+        long l;
+        float f;
+        double d;
+        char c;
+        string s;
+        byte b;
+        bool b2;
 
-            if (grade_percentage >= 70 ){
-                Console.WriteLine("You Passed!");
-            }
 
-            else if (grade_percentage <= 70){
-                Console.WriteLine("You didn't pass. Please try again.");
-            }
+        //Variables
+        int myCount = 4;
+        string aName = "bob";
 
+
+        //var
+        var anotherCount = 4;
+
+        //Printing Variables
+        Console.Write("What's your age?");
+
+
+        //ReadLine
+        var ageString = Console.ReadLine();
+        System.Console.WriteLine($"My age is {ageString}.");
+        System.Console.WriteLine("My age is " + ageString + ".");
+
+
+        //Converting Variables
+        int age = int.Parse(ageString);
+
+
+        //Conditionals
+        if (age < 18)
+        {
+            System.Console.WriteLine("You're a minor");
+            System.Console.WriteLine("Another string to print");
+        }
+        else
+        {
+            System.Console.WriteLine("You're old");
+        }
+
+        //Operators
     }
 }

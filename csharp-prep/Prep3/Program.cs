@@ -1,41 +1,74 @@
 using System;
 
-Console.WriteLine("Hello Prep3 World!");
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello Prep3 World!");
 
-/*int count = 5;
-//while
-while (count < 10) {
-    Console.WriteLine($"Count = {count}");
-    count += 1;
+        // while loop
+        int count = 0;
+        while (count < 5)
+        {
+            System.Console.WriteLine($"count = {count}");
+            // count = count + 1;
+            // count += 1;
+            // count++;
+            ++count;
+        }
+
+
+        // do-while loop
+        int moreCount = 0;
+        do
+        {
+            System.Console.WriteLine($"moreCount = {moreCount++}");
+        } while (moreCount < 5);
+
+        // for loop
+        for (var i = 10; i > 5; --i)
+        {
+            System.Console.WriteLine($"i = {i}");
+        }
+
+        // System.Console.WriteLine($"i = {i}"); //won't work
+
+
+        /// Assignment: Guess My Number https://byui-cse.github.io/cse210-course-2023/unit01/csharp-3.html
+
+        // Ask for random number
+        Random randomGenerator = new Random();
+        int random = randomGenerator.Next(1, 11);
+
+        int guess;
+        do
+        {
+            // Ask for user guess
+            System.Console.Write("Guess a number (between 1-10): ");
+            guess = int.Parse(Console.ReadLine());
+
+            if (guess < 1 || guess > 10)
+            {
+                break;
+            }
+
+            // Check if guess is higher
+            if (guess > random)
+            {
+                System.Console.WriteLine("Too High");
+            }
+
+            else if (guess < random)
+            { // Check if guess is lower
+                System.Console.WriteLine("Too Low");
+            }
+
+            else
+            { // Check if guess is match 
+                System.Console.WriteLine("Correct");
+            }
+        } while (random != guess);
+
+        // Keep going....
+    }
 }
-//do while
-int anotherCount = 0;
-do {
-    System.Console.WriteLine($"AnotherCount = {anotherCount++}");
-} while (anotherCount < 10);
-//for while
-for (int i=0; i<5; ++i) {
-    System.Console.WriteLine($"i = {i}");
-}*/
-
-// ask for random number
-Random randomGenerator = new Random();
-int randomNumber = randomGenerator.Next(1, 11);
-
-int guess = 3;
-//ask for a number from user
-
-while (guess != randomNumber){
-    System.Console.WriteLine("Guess a random number: ");
-    guess = int.Parse(Console.ReadLine());
-    //check if guess is higher
-    if(guess > randomNumber){
-        System.Console.WriteLine("Too high");}
-
-    //check if guess is lower
-    else if (guess < randomNumber){
-        System.Console.WriteLine("Too low");}
-
-    else
-        System.Console.WriteLine("You got it!");}
-            
