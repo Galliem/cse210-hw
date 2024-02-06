@@ -5,6 +5,7 @@ class Program{
         var journal = new Journal();
         bool keepGoing = true;
     
+//ShowMenu prints the menu and asks user for input. Returns int.
 static int ShowMenu(){
     System.Console.WriteLine("What would you like to do?");
     System.Console.WriteLine("1. Write");
