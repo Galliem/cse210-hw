@@ -1,3 +1,5 @@
+using System.Formats.Tar;
+
 namespace Journal;
 
 class Program
@@ -40,7 +42,9 @@ class Program
 
             if (number == 1)
             {//write
-                var entry = new Entry();
+                var prompt = "What was the best part of today? ";
+                var content = "my answer";
+                var entry = new Journal.entries(prompt, content);
                 journal.AddEntry(entry);
             }
 
