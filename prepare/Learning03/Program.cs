@@ -1,6 +1,9 @@
-Class Fractions{
-    public string whole;
-    public Fractions(){
-        whole = 1/1;
-    }
+Class Program{
+
+static void Main(string[] args){
+
+Console.WriteLine($"{Student}")
+}
+
+
 }
