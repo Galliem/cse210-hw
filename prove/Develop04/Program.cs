@@ -11,18 +11,24 @@ class Program
         System.Console.WriteLine("4. Quit");
         Console.WriteLine("Select a choice from the menu: ");
         int number = 1;
+        string endMessage = "Good Job!";
 
         while (number != 5){
             if number == 1{
-                breathing()
+                breathing();
+                Console.WriteLine($"{endMessage}");
             }
             else if number == 2{
-                Reflection()
+                Reflection();
+                Console.WriteLine($"{endMessage}");
+            }
+            else if number == 3{
+                Listing();
+                Console.WriteLine($"{endMessage}");
+            }
+            else{
+                
             }
         }
-
-        string displayEndMessage(){
-            return Console.WriteLine("Good Job!");
-        };
     }
 }
