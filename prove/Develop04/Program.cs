@@ -13,7 +13,12 @@ class Program
         int number = 1;
 
         while (number != 5){
-
+            if number == 1{
+                breathing()
+            }
+            else if number == 2{
+                Reflection()
+            }
         }
 
         string displayEndMessage(){

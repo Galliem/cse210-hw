@@ -6,6 +6,11 @@ public class Activity{
     int currentTime;
     int futureTime;
 
+    public Activity(string name, string description){
+        this.name = name;
+        this.description = description;
+    }
+
 void displayStartMessage(){
             Console.WriteLine("");
         }
