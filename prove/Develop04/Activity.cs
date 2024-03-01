@@ -2,10 +2,9 @@ public class Activity{
 
     string name;
     string description;
-    int duration;
-    int timeLeft;
-    int currentTime;
-    int futureTime;
+    public int duration;
+    public DateTime startTime;
+    public int futureTime;
 
     public Activity(string name, string description){
         this.name = name;
@@ -20,9 +19,11 @@ void displayStartMessage(){
     }
     bool checkTime(){
         currentTime = DateTime.Now();
-    };
-    string getStartMessageInfo();
+    }
+    
     string getEndMessageInfo();
     string selectRandomPrompt();
-    string displayRandomQuestion();
+    string displayRandomQuestion(){
+
+    }
 };

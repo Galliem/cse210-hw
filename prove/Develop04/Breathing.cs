@@ -5,7 +5,7 @@ public class Breathing:Activity{
     }
 
     public void BreathingActivity(){
-        while (timeLeft != 0){
+        while (futureTime != 0){
             System.Console.WriteLine("Breathe in...");
             System.Console.Write("+");
             Thread.Sleep(1000);

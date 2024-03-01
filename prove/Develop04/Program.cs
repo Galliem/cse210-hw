@@ -32,19 +32,19 @@ public class Program{
             Console.Write("\b \b");
         }
 
-        if (number == 1){
+        if (i == 1){
 
             Breathing.BreathingActivity();
             countdown();
             Console.WriteLine($"{endMessage}");
         }
-        else if (number == 2)
+        else if (i == 2)
         {
             Reflection();
             countdown();
             Console.WriteLine($"{endMessage}");
         }
-        else if (number == 3)
+        else if (i == 3)
         {
             Listing();
             countdown();
@@ -52,7 +52,7 @@ public class Program{
         }
         else
         {
-            number = 4;
+            i = 4;
         }
 }
 }
