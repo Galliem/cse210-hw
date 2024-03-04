@@ -171,7 +171,11 @@ public class Truck: Vehicle {
 
 
 
+//public class ShapeRunner{
 
+//    foreach (var shape in shapes){
+//        Console.WriteLine($"Area of Shape is: {shape.Area()}");
+//    }    }
 
 
 public class Shape {
@@ -179,6 +183,9 @@ public class Shape {
 
     public Shape(string color) {
         _color = color;
+    }
+    public virtual float Area(){
+        return -1;
     }
 }
 
@@ -190,7 +197,7 @@ public class Circle: Shape {
         _radius = radius;
     }
 
-    public float Area() {
+    public override float Area() {
         float pi = (float)3.14;
         return pi * _radius * _radius;
     }
@@ -204,7 +211,7 @@ public class Square: Shape {
         _sideLength = sideLength;
     }
 
-    public float Area() {
+    public override float Area() {
         return _sideLength * _sideLength;
     }
 }
