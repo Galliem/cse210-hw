@@ -1,29 +1,28 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class Activity{
 
-    string name;
-    string description;
+    private string name;
+    private string description;
+    public string getName(){
+        return name;
+    }
+    public string getDescription(){
+        return description;
+    }
     public int duration;
     public DateTime startTime;
-    public int futureTime;
+    Random random = new Random();
 
     public Activity(string name, string description){
         this.name = name;
         this.description = description;
     }
 
-void displayStartMessage(){
-            Console.WriteLine("");
-        }
-    int promptDuration(){
-        int duration = Console.Read("How long (in seconds) do you want to do this activity? ");
-    }
-    bool checkTime(){
-        currentTime = DateTime.Now();
-    }
-    
-    string getEndMessageInfo();
-    string selectRandomPrompt();
-    string displayRandomQuestion(){
-
+public int promptDuration(){
+    Console.WriteLine("How long (in seconds) do you want to do this activity? ");
+    string time = Console.ReadLine();
+    int futureTime = int.Parse(time);
+    return futureTime;
     }
 };

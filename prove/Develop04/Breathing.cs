@@ -1,18 +1,19 @@
 public class Breathing:Activity{
 
-    Breathing(): base ("Breathing", "This activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing."){
+    public Breathing(): base ("Breathing", "This activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing."){
 
     }
 
     public void BreathingActivity(){
-        while (futureTime != 0){
+        System.Console.WriteLine(getName(), getDescription());
+        int promptDuration1 = promptDuration();
+        while (promptDuration1 != 0){
             System.Console.WriteLine("Breathe in...");
             System.Console.Write("+");
-            Thread.Sleep(1000);
+            Thread.Sleep(4000); // 4 seconds
             System.Console.WriteLine("\b \b");
-            Console.Write("-");
             System.Console.WriteLine("Breathe out...");
-        }
-        
+            Thread.Sleep(5000);
+        } 
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.Design;
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -14,6 +14,21 @@ class Program
         System.Console.WriteLine("5. Record Event");
         System.Console.WriteLine("6. Quit");
         System.Console.WriteLine("Select a choice from the menu: ");
-        string selection = Console.ReadLine();
+        string s = Console.ReadLine();
+        int selection = int.Parse(s);
+
+    
+
+    if (selection == 1){
+
+        System.Console.WriteLine("");
     }
+    //else if (selection == 2){}
+    //else if (selection == 3){}
+    //else if (selection == 4){}
+    //else if (selection == 5){}
+    else{
+        selection = 6;
+    }
+}
 }

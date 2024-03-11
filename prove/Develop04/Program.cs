@@ -1,6 +1,8 @@
 using System;
+using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices.Marshalling;
+using System.Security.Cryptography.X509Certificates;
 
 public class Program{
     static void Main(string[] args){
@@ -11,7 +13,8 @@ public class Program{
         Console.WriteLine("3. Listing Activity");
         Console.WriteLine("4. Quit");
         Console.WriteLine("Select a choice from the menu: ");
-        int i = 0;
+        string i = Console.ReadLine();
+        int selection = int.Parse(i);
         string endMessage = "Good Job!";
 
         List<string> animationStrings = new List<string>();
@@ -26,33 +29,35 @@ public class Program{
         DateTime endTime = startTime.AddSeconds(10);
 
         while(DateTime.Now < endTime){
-            string s = animationStrings[i];
+            string s = animationStrings[selection];
             Console.Write(s);
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             Console.Write("\b \b");
         }
 
-        if (i == 1){
+        if (selection == 1){
 
-            Breathing.BreathingActivity();
-            countdown();
+            Breathing breathingAction = new Breathing();
+            //countdown();
+            breathingAction.BreathingActivity();
+            Console.WriteLine($"{endMessage}");
+            
+        }
+        else if (selection == 2)
+        {
+            Reflection reflectionAction = new Reflection();
+            reflectionAction.reflectionActivity();
+            //countdown();
             Console.WriteLine($"{endMessage}");
         }
-        else if (i == 2)
+        else if (selection == 3)
         {
-            Reflection();
-            countdown();
-            Console.WriteLine($"{endMessage}");
-        }
-        else if (i == 3)
-        {
-            Listing();
-            countdown();
+            Listing listingAction = new Listing();
+            //countdown();
             Console.WriteLine($"{endMessage}");
         }
         else
         {
-            i = 4;
+            selection = 4;
         }
-}
-}
+        }}
