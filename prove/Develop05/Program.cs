@@ -1,3 +1,4 @@
+namespace GoalProject;
 using System;
 using System.ComponentModel.Design;
 
@@ -5,7 +6,6 @@ public class Program
 {
     static void Main(string[] args)
     {
-        System.Console.WriteLine("You have 0 points");
         System.Console.WriteLine("Menu Options:");
         System.Console.WriteLine("1. Create New Goal");
         System.Console.WriteLine("2. List Goals");
@@ -20,13 +20,30 @@ public class Program
     
 
     if (selection == 1){
-
-        System.Console.WriteLine("");
+        System.Console.WriteLine("You selected: Create New Goal");
+        Goal goalAction = new Goal();
+        goalAction.goalMenu();
+        System.Console.WriteLine("What is the name of this goal?");
+        string name = Console.ReadLine();
+        System.Console.WriteLine("Describe the goal");
+        string description = Console.ReadLine();
+        System.Console.WriteLine("How many points is this goal worth?");
+        string points = Console.ReadLine();
     }
-    //else if (selection == 2){}
-    //else if (selection == 3){}
-    //else if (selection == 4){}
-    //else if (selection == 5){}
+
+    else if (selection == 2){
+        System.Console.WriteLine("You selected: List Goals");
+        //System.Console.WriteLine(goalList);
+    }
+    else if (selection == 3){
+        System.Console.WriteLine("You selected: Save Goals");
+    }
+    else if (selection == 4){
+        System.Console.WriteLine("You selected: Load Goals");
+    }
+    else if (selection == 5){
+        System.Console.WriteLine("You selected: Record Event");
+    }
     else{
         selection = 6;
     }

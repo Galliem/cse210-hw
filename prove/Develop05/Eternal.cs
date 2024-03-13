@@ -1,9 +1,7 @@
-public class Eternal:Goal{
-    public Eternal():base(0, "Eternal", "description"){
-        
-    }
+namespace GoalProject;
+ public class Eternal:Goal{
+    public Eternal():base(){}
 
     public void EternalGoal(){
-
     }
-}
+ }

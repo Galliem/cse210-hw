@@ -1,9 +1,10 @@
-public class Checklist:Goal{
-    public Checklist():base(0, "Checklist", "description"){
+namespace GoalProject;
+ public class Checklist:Goal{
+     public Checklist():base(){
         
-    }
+     }
 
     public void ChecklistGoal(){
 
     }
-}
+ }
