@@ -2,6 +2,7 @@ namespace GoalProject;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.IO.Enumeration;
+using System.Collections.Concurrent;
 
 public class Goal{
     
@@ -13,35 +14,37 @@ public class Goal{
     public string getDescription(){
         return description;
     }
-    protected int points;
+    protected string points;
     public int getPoints(){
-        return points;
+        int numberPoints = int.Parse(points);
+        return numberPoints;
     }
+    public int totalPoints;
+    protected string setGoal;
+    public readonly string DELIMITER = "~";
 
     protected string cAmount = Console.ReadLine();
     //int completeAmount = int.Parse(cAmount);
 
-    public List<string> goalList;
-
-    // private string filename = "myFile.txt";
-    // private string[] lines = System.IO.File.ReadAllLines(filename);
-    // foreach (string line in lines){
-    //     string[] parts = line.split(",");
-    //     string goal = parts[0];
-    //     string points = parts[1];
+    public static List<string> goalList;
+    // public static int totalAllPoints(){
+    //     totalPoints.append(numberPoints);
     // }
+    public static List<string> goalNumberedList;
 
-    // using(StreamWriter outputFile = new StreamWriter(FileSystemName))
-    // {
-    //     outputFile.WriteLine("First line in file.");
-    //     string color = "Blue";
-    //     outputFile.WriteLine($"My favorite color is {color}");
-    // }
-
-    //recordEvent(){}
-    //isComplete(){}
+    public virtual string goalDetails(){
+        System.Console.WriteLine("What is the name of this goal?");
+        string name = Console.ReadLine();
+        System.Console.WriteLine("Describe the goal");
+        string description = Console.ReadLine();
+        System.Console.WriteLine("How many points is this goal worth?");
+        string points = Console.ReadLine();
+        string setGoal = name + DELIMITER + description + DELIMITER+ points;
+        goalList.Append(setGoal);
+        return setGoal;
+    }
     public void goalMenu(){
-        System.Console.WriteLine($"You have {points} points.");
+        System.Console.WriteLine($"You have {totalPoints} points.");
         Console.WriteLine("The types of Goals are:");
         Console.WriteLine("1. Simple");
         Console.WriteLine("2. Eternal");
@@ -52,25 +55,35 @@ public class Goal{
         int selection = int.Parse(s);
 
         if (selection == 1){
-            Goal simpleAction = new Goal();
-            //simpleAction.SimpleGoal();
-            System.Console.WriteLine("");
+            System.Console.WriteLine("You chose 1. Simple");
+            System.Console.WriteLine("Press Enter");
+            Simple simpleAction = new Simple();
+            simpleAction.SimpleGoal();
+            simpleAction.goalDetails();
+            System.Console.WriteLine($" You created the following goal: {setGoal}");
         }
         else if (selection == 2){
-            Goal eternalAction = new Goal();
+            System.Console.WriteLine("You chose 2. Eternal");
+            System.Console.WriteLine("Press Enter");
+            Eternal eternalAction = new Eternal();
             //eternalAction.EternalGoal();
-            System.Console.WriteLine("");
+            eternalAction.goalDetails();
         }
         else if (selection == 3){
-            Goal checklistAction = new Goal();
-            System.Console.WriteLine("How many times does this goal need to be completed for a bonus?");
-            string completeAmount = Console.ReadLine();
-            //checklistAction.ChecklistGoal();
-            System.Console.WriteLine("");
+            System.Console.WriteLine("You chose 3. Checklist");
+            System.Console.WriteLine("Press Enter");
+            Checklist checklistAction = new Checklist();
+            checklistAction.ChecklistGoal();
         }
         else{
             selection = 4;
         }
     }
-
+    public void getEvent(){
+        System.Console.WriteLine("The goals are: ");
+        System.Console.WriteLine($"{goalNumberedList}");
+        System.Console.WriteLine("Which goal did you accomplish?");
+        string a = Console.ReadLine();
+        int accomplishedGoal = int.Parse(a);
+    }
 }

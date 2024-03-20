@@ -1,6 +1,8 @@
 namespace GoalProject;
 using System;
 using System.ComponentModel.Design;
+using System.Security.Cryptography.X509Certificates;
+
 
 public class Program
 {
@@ -21,28 +23,28 @@ public class Program
 
     if (selection == 1){
         System.Console.WriteLine("You selected: Create New Goal");
+        System.Console.WriteLine("Press Enter");
         Goal goalAction = new Goal();
         goalAction.goalMenu();
-        System.Console.WriteLine("What is the name of this goal?");
-        string name = Console.ReadLine();
-        System.Console.WriteLine("Describe the goal");
-        string description = Console.ReadLine();
-        System.Console.WriteLine("How many points is this goal worth?");
-        string points = Console.ReadLine();
     }
 
     else if (selection == 2){
         System.Console.WriteLine("You selected: List Goals");
-        //System.Console.WriteLine(goalList);
+        System.Console.WriteLine(Goal.goalList);
     }
     else if (selection == 3){
         System.Console.WriteLine("You selected: Save Goals");
     }
     else if (selection == 4){
         System.Console.WriteLine("You selected: Load Goals");
+        //fileWork
+
     }
     else if (selection == 5){
         System.Console.WriteLine("You selected: Record Event");
+        Goal goalAction = new Goal();
+        goalAction.getEvent();
+        //isComplete(){}
     }
     else{
         selection = 6;
