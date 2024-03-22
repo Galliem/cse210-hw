@@ -11,6 +11,5 @@ class Program
         videoAction.getVideo1();
         videoAction.getVideo2();
         videoAction.getVideo3();
-        videoAction.getComments();
     }
 }
