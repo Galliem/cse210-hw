@@ -1,5 +1,9 @@
 namespace foundation2;
-class Order{
+public class Order{
+    // list of products and a customer
+    private string customer;
+    // calculate the total cost of the order
+    //return string for shipping label
     public void getOrder(){
         Customer customerAction = new Customer();
         customerAction.getCustomer();
