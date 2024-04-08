@@ -1,18 +1,29 @@
 using System.Security.Cryptography.X509Certificates;
 
 namespace foundation2;
+
 public class Product{
-    private float totalCost;
+    private int totalCost;
     private string productName;
     private int productId;
-    private float price;
+    private int price;
     private int quantity;
+    private int cost;
 
-    public Product(string productName, int productId, float price, int quantity){
+// Contains the name, product id, price per unit, and quantity of each product.
+    public Product(string productName, int productId, int price, int quantity){
         this.productName = productName;
         this.productId = productId;
         this.price = price;
         this.quantity = quantity;
     }
-    //public float getProduct(){}
+// The total cost of this product is computed by multiplying the price per unit and the quantity. 
+    public int getProductCost(){
+        int cost = totalCost + (price * quantity);
+        return cost;
+    }
+    public string getPackLabel(){ 
+        string packLabel = $"{productId} - {productName}";
+        return packLabel;
+    }
 }

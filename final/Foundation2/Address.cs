@@ -2,25 +2,31 @@ namespace foundation2;
 class Address{
     public int shippingCost;
     string fullAddress;
-    public int getAddress(){
-        System.Console.WriteLine("Enter the address");
-        System.Console.WriteLine("Street: ");
-        string street = Console.ReadLine();
-        System.Console.WriteLine("City: ");
-        string city = Console.ReadLine();
-        System.Console.WriteLine("State/Providence: ");
-        string state = Console.ReadLine();
-        System.Console.WriteLine("Country: ");
-        string homeCountry = Console.ReadLine();
+    private string name;
+    private string street;
+    private string city;
+    private string state;
+    private string homeCountry;
+    public Address(string name, string street, string city, string state, string homeCountry){
+        this.name = name;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.homeCountry = homeCountry;
+    }
+    
+    public int getShippingCost(){
         if (homeCountry == "United States"){
             shippingCost = 5;
         }
         else{
             shippingCost = 35;
         }
-        System.Console.WriteLine("\n The address you provided is:");
-        fullAddress = $"{street}\n{city}, {state}\n{homeCountry}";
-        System.Console.WriteLine($"{fullAddress}");
         return shippingCost;
+    }
+    public string getAddress(){
+        fullAddress = $"{street}\n{city}, {state}\n{homeCountry}";
+        string shippingLabel = $"{name}\n{fullAddress}";
+        return shippingLabel;
     }
 }
