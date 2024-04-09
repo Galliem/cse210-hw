@@ -2,11 +2,15 @@ namespace foundation4;
 class Activity{
     string date;
     int activityLength;
+    int distance;
+    int speed;
+    int pace;
+    string summary;
     void getActivity(){
-        float distance;
-        float speed;
-        float pace;
-        string summary;
+        // int distance;
+        // int speed;
+        // int pace;
+        // string summary;
     }
     virtual void method(){
         distance=0;

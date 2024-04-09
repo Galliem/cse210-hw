@@ -1,9 +1,17 @@
 namespace foundation3;
 class Reception{
+    string description;
+    string title;
+    string date;
+    string emailRSVP;
+    string eventInfo;
     void getReception(){
-        string eventInfo;
-
-        System.Console.WriteLine("Enter an email for the RSVP:");
-        string emailRSVP = Console.ReadLine();
+        eventInfo = "";
+        emailRSVP = "johndoe@gmail.com";
     }
+     public Reception(string description, string title, string date){
+            this.description = description;
+            this.title = title;
+            this.date = date;
+     }
 }
